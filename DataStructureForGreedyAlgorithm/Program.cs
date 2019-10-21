@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * Bill Nicholson
+ * nicholdw@ucmail.uc.edu
+ */
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +14,9 @@ namespace DataStructureForGreedyAlgorithm
     {
         static void Main(string[] args)
         {
+            // Create a root node. The cost is not relevant.
+            GreedyTreeNode myTree = new GreedyTreeNode();
+            // Add more nodes...
         }
     }
 }
