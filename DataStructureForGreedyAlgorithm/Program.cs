@@ -18,47 +18,50 @@ namespace DataStructureForGreedyAlgorithm
             GreedyTreeNode myTree = new GreedyTreeNode();
 
             // Add more nodes...
-            GreedyTreeNode node1 = new GreedyTreeNode();
-            node1.cost = 1;
 
-            GreedyTreeNode node2 = new GreedyTreeNode();
-            node2.cost = 4;
+            myTree.addGreedyTreeNode(NewNode(20));
+            myTree.addGreedyTreeNode(NewNode(4));
+            myTree.addGreedyTreeNode(NewNode(8));
 
-            GreedyTreeNode node3 = new GreedyTreeNode();
-            node3.cost = 7;
+            myTree.GetGreedyTreeNodes()[0].addGreedyTreeNode(NewNode(37));
+            myTree.GetGreedyTreeNodes()[0].addGreedyTreeNode(NewNode(100));
 
-            GreedyTreeNode node4 = new GreedyTreeNode();
-            node4.cost = 90;
-
-            GreedyTreeNode node5 = new GreedyTreeNode();
-            node5.cost = 8;
-
-            GreedyTreeNode node6 = new GreedyTreeNode();
-            node6.cost = 100;
+            myTree.GetGreedyTreeNodes()[1].addGreedyTreeNode(NewNode(30));
+            myTree.GetGreedyTreeNodes()[1].addGreedyTreeNode(NewNode(12));
+                myTree.GetGreedyTreeNodes()[1].GetGreedyTreeNodes()[1].addGreedyTreeNode(NewNode(2));
+                myTree.GetGreedyTreeNodes()[1].GetGreedyTreeNodes()[1].addGreedyTreeNode(NewNode(10));
+                     myTree.GetGreedyTreeNodes()[1].GetGreedyTreeNodes()[1].GetGreedyTreeNodes()[0].addGreedyTreeNode(NewNode(10));
+                     myTree.GetGreedyTreeNodes()[1].GetGreedyTreeNodes()[1].GetGreedyTreeNodes()[0].addGreedyTreeNode(NewNode(9));
 
 
-            myTree.addGreedyTreeNode(node1);
-            myTree.addGreedyTreeNode(node2);
-            myTree.addGreedyTreeNode(node3);
 
-            myTree.GetGreedyTreeNodes()[0].addGreedyTreeNode(node4);
-            myTree.GetGreedyTreeNodes()[0].addGreedyTreeNode(node5);
 
-            myTree.GetGreedyTreeNodes()[0].GetGreedyTreeNodes()[1].addGreedyTreeNode(node6);
-            myTree.GetGreedyTreeNodes()[0].GetGreedyTreeNodes()[1].addGreedyTreeNode(node1);
+            myTree.GetGreedyTreeNodes()[2].addGreedyTreeNode(NewNode(90));
+            myTree.GetGreedyTreeNodes()[2].addGreedyTreeNode(NewNode(2));
+
+
 
 
             GreedyTreeNode next = myTree.FindCheapestRoute();
             Console.WriteLine("Cost.... " + next.cost);
 
 
-            for (int i = 1; i < 3; i++)
+            for (int i = 1; i <= 3; i++)
             {
                  next = next.FindCheapestRoute();
-                Console.WriteLine("Total Cost.... " + next.cost);
+                Console.WriteLine("Cost.... " + next.cost);
             }
 
 
+
+        }
+
+        public static GreedyTreeNode NewNode(int cost)
+        {
+            GreedyTreeNode newNode = new GreedyTreeNode();
+            newNode.cost = cost;
+
+            return newNode;
 
         }
 
