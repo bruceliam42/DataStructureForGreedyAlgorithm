@@ -19,10 +19,10 @@ namespace DataStructureForGreedyAlgorithm
 
             // Add more nodes...
 
-              //This is layer 1 of our tree
-              myTree.addGreedyTreeNode(NewNode(20));
+             //This is layer 1 of our tree
+              myTree.addGreedyTreeNode(NewNode(3));
               myTree.addGreedyTreeNode(NewNode(4));
-              myTree.addGreedyTreeNode(NewNode(8));
+            //End of layer 1
 
 
             //Layer two of our tree with branch out more and hold 6 values
@@ -31,19 +31,25 @@ namespace DataStructureForGreedyAlgorithm
 
               myTree.GetGreedyTreeNodes()[1].addGreedyTreeNode(NewNode(12));
               myTree.GetGreedyTreeNodes()[1].addGreedyTreeNode(NewNode(30));
-        
-                      
-              myTree.GetGreedyTreeNodes()[2].addGreedyTreeNode(NewNode(90));
-              myTree.GetGreedyTreeNodes()[2].addGreedyTreeNode(NewNode(2));
+
+            //End layer 2
 
 
+            //Begin layer 3 of the tree
+
+            myTree.GetGreedyTreeNodes()[0].GetGreedyTreeNodes()[0].addGreedyTreeNode(NewNode(90));
+            myTree.GetGreedyTreeNodes()[0].GetGreedyTreeNodes()[1].addGreedyTreeNode(myTree.GetGreedyTreeNodes()[0].GetGreedyTreeNodes()[0]); //90
 
             myTree.GetGreedyTreeNodes()[1].GetGreedyTreeNodes()[0].addGreedyTreeNode(NewNode(1)); 
             myTree.GetGreedyTreeNodes()[1].GetGreedyTreeNodes()[1].addGreedyTreeNode(myTree.GetGreedyTreeNodes()[1].GetGreedyTreeNodes()[0].GetGreedyTreeNodes()[0]); //Sharing a reference to the same node equal to one
 
 
 
-            //All nodes will lead to 12
+            //All nodes will lead to 12, the final destination.  No need to share a reference to the same node with a cost of 12 here, as 12 will be the last node in the sequence. If we wanted to expand past 12 we would have to change this.  
+
+            myTree.GetGreedyTreeNodes()[0].GetGreedyTreeNodes()[0].GetGreedyTreeNodes()[0].addGreedyTreeNode(NewNode(12));
+            myTree.GetGreedyTreeNodes()[0].GetGreedyTreeNodes()[1].GetGreedyTreeNodes()[0].addGreedyTreeNode(NewNode(12));
+
             myTree.GetGreedyTreeNodes()[1].GetGreedyTreeNodes()[1].GetGreedyTreeNodes()[0].addGreedyTreeNode(NewNode(12)); //Connects that node equal to one to a node with a cost of 12
             myTree.GetGreedyTreeNodes()[1].GetGreedyTreeNodes()[0].GetGreedyTreeNodes()[0].addGreedyTreeNode(NewNode(12)); 
 
