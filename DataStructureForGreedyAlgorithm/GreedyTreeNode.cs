@@ -10,6 +10,10 @@ using System.Threading.Tasks;
 
 namespace DataStructureForGreedyAlgorithm
 {
+
+    //This is a test committ
+    
+
     /// <summary>
     /// Model a node in a tree structure
     /// </summary>
@@ -17,6 +21,16 @@ namespace DataStructureForGreedyAlgorithm
     {
         private List<GreedyTreeNode> greedyTreeNodes;
         private int mCost;
+
+        /// <summary>
+        /// Root Node Constructor
+        /// </summary>
+        /// <param name="cost"></param>
+        public GreedyTreeNode()
+        {
+            this.cost = 0;
+            greedyTreeNodes = new List<GreedyTreeNode>();
+        }
 
         /// <summary>
         /// The cost to get to this node if you are traversing the tree
@@ -31,11 +45,11 @@ namespace DataStructureForGreedyAlgorithm
         /// <returns>A reference to the cheapest node connected to this node</returns>
         public GreedyTreeNode FindCheapestRoute()
         {
-            int minCost = 0;
+            int minCost = int.MaxValue; 
             GreedyTreeNode cheapestGreedyTreeNode = null;
             foreach (GreedyTreeNode greedyTreeNode in greedyTreeNodes)
             {
-                if (greedyTreeNode.cost < minCost)) {
+                if (greedyTreeNode.cost < minCost) {
                     minCost = greedyTreeNode.cost;
                     cheapestGreedyTreeNode = greedyTreeNode;    // Copy the reference
                 };
@@ -59,15 +73,7 @@ namespace DataStructureForGreedyAlgorithm
                 this.addGreedyTreeNode(greedyTreeNode);
             }
         }
-        /// <summary>
-        /// Root Node Constructor
-        /// </summary>
-        /// <param name="cost"></param>
-        public GreedyTreeNode ()
-        {
-            this.cost = 0;
-            greedyTreeNodes = new List<GreedyTreeNode>();
-        }
+      
         /// <summary>
         /// Get the list of nodes connected to this node
         /// </summary>
